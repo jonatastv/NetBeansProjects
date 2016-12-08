@@ -10,7 +10,7 @@ public class Principal
               int valor=0;  
                 FilaDinamica f1 = new FilaDinamica();
                 NoArvore raiz = null;
-		
+		PilhaDinamica p = new PilhaDinamica();
 		ABB arvore = new ABB();
 		
                 f1.enqueue(5);
@@ -27,22 +27,40 @@ public class Principal
                 raiz = arvore.abb_insere(raiz,valor);
                    
             }
+              arvore.abb_imprime(raiz, "");    
                 
-                
-                
-                
-                
-                
-                
-                
-                
-              System.out.println(valor);
               
               
-              System.out.println("raizz!!");
-              arvore.abb_imprime(raiz, "");
+//              
+//              while (raiz. != null) {
+//                
+//                 NoArvore a = arvore.abb_retira(raiz, valor);
+//                 p.push(a.info);
+//            }
+              
+           
               
               
+                
+             while ( raiz.direita != null) {                
+                
+                 raiz = raiz.direita;
+                 
+                 NoArvore a = arvore.abb_retira(raiz, valor);
+                 p.push(a.info);
+                }
+   
+                
+                
+                
+                
+           
+              arvore.abb_imprime(raiz, ""); 
+              
+              System.out.println("raizz!!cima");
+          
+              
+              p.imprime();
               
                 	f1 = null;
                 
