@@ -39,22 +39,33 @@ public class Principal
 //            }
               
            
-              
+             NoArvore no; 
               
                 
-             while ( raiz.direita != null) {                
+             while ( raiz != null) {                
                 
-                 raiz = raiz.direita;
+                 no = raiz;
+                 while (no.direita  != null) {                     
+                     
+                     no = no.direita;
+                 }
                  
-                 NoArvore a = arvore.abb_retira(raiz, valor);
-                 p.push(a.info);
-                }
+                       System.out.println("aqui");
+                 raiz = arvore.abb_retira(raiz, no.info);
+                 p.push(no.info);
+                 }
+                
    
+//             while (raiz.esquerda != null) {                
+//                raiz = raiz.esquerda;
+//                 System.out.println("aquii!!");
+//                 NoArvore a = arvore.abb_retira(raiz, valor);
+//                 p.push(a.info);
+//                 
+//            }
+             
+             
                 
-                
-                
-                
-           
               arvore.abb_imprime(raiz, ""); 
               
               System.out.println("raizz!!cima");
